@@ -1,8 +1,15 @@
 import PresentValueForm from "./PresentValueForm";
+import Helmet from "react-helmet";
+import Navbar from "./Navbar.js";
+
 
 function PresentValue(){
     return(
-        <div className="App">      
+        <div className="App">  
+              <Helmet>
+          <title>Future Value</title>
+        </Helmet>   
+          <Navbar/>
         <PresentValueForm />
         
         <div class="right-block" style={{ float: "left", width: "75%" }}>

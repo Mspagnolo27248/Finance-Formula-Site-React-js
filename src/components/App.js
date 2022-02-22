@@ -10,7 +10,7 @@ import {
 import PresentValue from "./PresentValue";
 import Home from "./Home";
 import FutureValue from "./FutureValue";
-
+import LoanPayment from "./LoanPayment"
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/PresentValue" element={<PresentValue />} />
       <Route path="/FutureValue" element={<FutureValue />} />
+      <Route path="/LoanPayment" element={<LoanPayment />} />
     </Routes>
   </BrowserRouter>
     
