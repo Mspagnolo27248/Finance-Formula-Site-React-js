@@ -2,11 +2,11 @@
 import { useState } from "react";
 import Field from "./Field"
 
-function FinForm(){
+function FutureValueForm(){
 
   const [calcSolution,setCalcSolution] =useState("")
   const [params ,setParams] = useState({
-    npr:"",
+    nper:"",
     rate:"",
     pv:""
   })
@@ -21,7 +21,7 @@ function FinForm(){
   } 
 
 function handleClick(e){     
-     const result = pv(params.rate,params.fv,params.nper)
+     const result = fv(params.rate,params.pv,params.nper)
      setCalcSolution(result)     
   }
 
@@ -30,28 +30,29 @@ function handleClick(e){
     currency: 'USD', 
   });
 
-  function pv(rate,fv,nper){
-     const _fv = parseFloat(fv)
+  function fv(rate,pv,nper){
+     const _pv = parseFloat(pv)
      const _rate = parseFloat(rate)
      const _nper = parseFloat(nper)
-     var _pv = _fv/((1+_rate)**_nper)
-     return _pv
+     var _fv = _pv*((1+_rate)**_nper)
+     return _fv
     }
 
 
     return(
         <div class="fin-div">
-        <div class="title">Present Value Calculator</div>
+        <div class="title">Future Value Calculator</div>
         <form  >          
 
-        <Field name ="fv" desc="Future Value" handleChange = {handleChange}/>
+        <Field name ="pv" desc="Present Value" handleChange = {handleChange}/>
         <Field name="rate" desc="Rate" handleChange = {handleChange}/>          
         <Field name ="nper" desc="Periods" handleChange = {handleChange} />
-        <Field name ="pv" desc="Present Value" value = {formatter.format(calcSolution)} readonly/>
+        <Field name ="fv" desc="Future Value" value = {formatter.format(calcSolution)} readonly/>
 
         <div >
-          <h3 class="result">PV: = {formatter.format(calcSolution)}</h3>
+          <h3 class="result">FV: = {formatter.format(calcSolution)}</h3>
         </div>
+     
         <button type="button" class="submit" onClick={handleClick}>Calculate</button>
       
         </form>
@@ -61,4 +62,4 @@ function handleClick(e){
 
 }
 
-export default FinForm;
+export default FutureValueForm;
