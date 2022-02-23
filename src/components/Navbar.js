@@ -8,6 +8,7 @@ function Navbar() {
                 <a href="/PresentValue">Present Value</a>
                 <a href="/FutureValue">Future Value</a>
                 <a href="/LoanPayment">Loan Payment</a>
+                <a href="/FVannuity">Future Value Annuity</a>
                 <a href="#about">About</a>
             </div>
         </div>

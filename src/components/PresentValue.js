@@ -7,7 +7,7 @@ function PresentValue(){
     return(
         <div className="App">  
               <Helmet>
-          <title>Future Value</title>
+          <title>Present Value</title>
         </Helmet>   
           <Navbar/>
         <PresentValueForm />

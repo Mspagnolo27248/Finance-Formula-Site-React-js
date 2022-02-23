@@ -11,6 +11,7 @@ import PresentValue from "./PresentValue";
 import Home from "./Home";
 import FutureValue from "./FutureValue";
 import LoanPayment from "./LoanPayment"
+import FvAnnuityPmt from "./FvAnnuityPmt";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/PresentValue" element={<PresentValue />} />
       <Route path="/FutureValue" element={<FutureValue />} />
       <Route path="/LoanPayment" element={<LoanPayment />} />
+      <Route path="/FvAnnuity" element={<FvAnnuityPmt />} />
     </Routes>
   </BrowserRouter>
     
