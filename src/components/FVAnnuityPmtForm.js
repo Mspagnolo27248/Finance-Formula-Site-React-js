@@ -31,10 +31,11 @@ function FvAnnuityPmtForm(){
   });
 
   function pmt(rate,pmt,nper){
+    debugger
      const _pmt = parseFloat(pmt.replace(/\$|,/g, ''))
-     const _rate = parseFloat(rate)/12
+     const _rate = parseFloat(rate)
      const _nper = parseFloat(nper)
-     var _fv = _pmt*(((1+_rate)^_nper-1)/_rate)
+     var _fv = _pmt*((((1+_rate)**_nper)-1)/_rate)
      return _fv
     }
 
