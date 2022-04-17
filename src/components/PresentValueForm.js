@@ -31,7 +31,8 @@ function handleClick(e){
   });
 
   function pv(rate,fv,nper){
-     const _fv = parseFloat(fv)
+    debugger
+     const _fv = parseFloat(fv.replace(/\$|,/g, ''))
      const _rate = parseFloat(rate)
      const _nper = parseFloat(nper)
      var _pv = _fv/((1+_rate)**_nper)

@@ -31,7 +31,7 @@ function FvAnnuityPmtForm(){
   });
 
   function pmt(rate,pmt,nper){
-     const _pmt = parseFloat(pmt)
+     const _pmt = parseFloat(pmt.replace(/\$|,/g, ''))
      const _rate = parseFloat(rate)/12
      const _nper = parseFloat(nper)
      var _fv = _pmt*(((1+_rate)^_nper-1)/_rate)

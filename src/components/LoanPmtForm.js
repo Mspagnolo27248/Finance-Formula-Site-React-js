@@ -31,7 +31,7 @@ function LoanPaymentForm(){
   });
 
   function pmt(rate,pv,nper){
-     const _pv = parseFloat(pv)
+     const _pv = parseFloat(pv.replace(/\$|,/g, ''))
      const _rate = parseFloat(rate)/12
      const _nper = parseFloat(nper)
      var _pmt = (_pv*(_rate))/(1-(1+_rate)**-_nper)
